@@ -1,0 +1,25 @@
+.category {
+  background-color: #fff;
+  border-radius: 5px;
+  border: 1px solid rgb(158, 158, 158);
+}
+.category a {
+  display: flex;
+  color: rgb(41, 41, 41);
+  text-decoration: none;
+}
+.category img {
+  height: 100px;
+  width: 100px;
+  object-fit: cover;
+}
+.category h4 {
+  font-size: 18px;
+  margin: 20px 5px;
+}
+.category small {
+  font-size: 16px;
+}
+.isAddedToCart{
+  background-color: yellow;
+}

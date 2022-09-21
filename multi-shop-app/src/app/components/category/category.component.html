@@ -1,0 +1,19 @@
+<div class="category" [ngClass]="{ isAddedToCart: isAddedToCart }">
+  {{ category.id }}
+  <a href="#">
+    <img [src]="category.imageUrl" [alt]="category.name" />
+    <div class="category-content">
+      <h4>{{ category.name }}</h4>
+      <small>{{ category.productCount }} Products</small>
+    </div>
+    <button *ngIf="!isAddedToCart" type="button" (click)="delete(category.id)">
+      Delete
+    </button>
+    <button *ngIf="!isAddedToCart" type="button" (click)="addToCart()">
+      Add to cart
+    </button>
+    <button *ngIf="isAddedToCart" type="button" (click)="removeToCart()">
+      Remove from cart
+    </button>
+  </a>
+</div>

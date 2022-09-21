@@ -1,0 +1,7 @@
+<h1>Item Name : {{ itemName }}</h1>
+<input id="text1" type="text" [value]="itemName" [disabled]="isDisabled" />
+
+<input [(ngModel)]="itemName" />
+
+<button type="button" (click)="enableInput()">Enable Input</button>
+<button type="button" (click)="disableInput()">Disable Input</button>
