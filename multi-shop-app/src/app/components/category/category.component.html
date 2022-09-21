@@ -1,19 +1,11 @@
-<div class="category" [ngClass]="{ isAddedToCart: isAddedToCart }">
-  {{ category.id }}
-  <a href="#">
-    <img [src]="category.imageUrl" [alt]="category.name" />
-    <div class="category-content">
-      <h4>{{ category.name }}</h4>
-      <small>{{ category.productCount }} Products</small>
+<a class="text-decoration-none" href="">
+  <div class="cat-item d-flex align-items-center mb-4">
+    <div class="overflow-hidden" style="width: 100px; height: 100px">
+      <img class="img-fluid" [src]="category.imageUrl" alt="{{ category.name }}" />
     </div>
-    <button *ngIf="!isAddedToCart" type="button" (click)="delete(category.id)">
-      Delete
-    </button>
-    <button *ngIf="!isAddedToCart" type="button" (click)="addToCart()">
-      Add to cart
-    </button>
-    <button *ngIf="isAddedToCart" type="button" (click)="removeToCart()">
-      Remove from cart
-    </button>
-  </a>
-</div>
+    <div class="flex-fill pl-3">
+      <h6>{{ category.name }}</h6>
+      <small class="text-body">{{ category.productCount }} Products</small>
+    </div>
+  </div>
+</a>

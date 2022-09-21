@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { CartService } from 'src/app/services/cart.service';
 
 @Component({
   selector: 'app-header',
@@ -8,7 +9,7 @@ import { Component } from '@angular/core';
 export class HeaderComponent {
   itemName: string = 'Item 1';
   isDisabled: boolean = true;
-  constructor() {}
+  constructor(private cartService: CartService) {}
 
   enableInput() {
     this.isDisabled = false;
@@ -23,5 +24,9 @@ export class HeaderComponent {
   }
   disableInputJS() {
     document.getElementById('text1')?.setAttribute('disabled', 'disabled');
+  }
+
+  getCartCount(): number {
+    return this.cartService.getProductCount();
   }
 }

@@ -20,7 +20,7 @@ export class CategoryComponent {
     this.isAddedToCart = true;
   }
 
-  removeToCart(){
-    this.isAddedToCart=false;
+  removeToCart() {
+    this.isAddedToCart = false;
   }
 }

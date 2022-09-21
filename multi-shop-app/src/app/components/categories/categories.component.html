@@ -1,18 +1,14 @@
-<div>
-  <label>Category Name</label>
-  <input type="text" [(ngModel)]="categoryName" />
-  <label>Product Count</label>
-  <input type="number" [(ngModel)]="productCount" />
-  <label>Category Image</label>
-  <input type="text" [(ngModel)]="categoryImage" />
-  <button type="button" (click)="addCategory()">Add Category</button>
+<!-- Categories Start -->
+<div class="container-fluid pt-5">
+  <h2 class="section-title position-relative text-uppercase mx-xl-5 mb-4">
+    <span class="bg-secondary pr-3">Categories</span>
+  </h2>
+  <div class="row px-xl-5 pb-3">
+    <ng-container *ngFor="let category of categories; let i = index">
+      <div class="col-lg-3 col-md-4 col-sm-6 pb-1">
+        <app-category [category]="category"></app-category>
+      </div>
+    </ng-container>
+  </div>
 </div>
-<div class="categories">
-  <ng-container *ngFor="let category of categories">
-    <app-category
-      *ngIf="category.id > 2"
-      [category]="category"
-      (deleteEmitter)="deleteCategory($event)"
-    ></app-category>
-  </ng-container>
-</div>
+<!-- Categories End -->

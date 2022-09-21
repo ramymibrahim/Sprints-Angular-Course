@@ -1,0 +1,43 @@
+<small
+[ngClass]="{
+  'text-primary mr-1': true,
+  'fa-star': rating >= 1,
+  'fa-star-half-alt': rating == 0.5,
+  'fa-start': rating < 0.5,
+  'far': rating < 0.5,
+  'fa': rating >= 1 || rating == 0.5
+}"
+></small>
+<small
+[ngClass]="{
+  'text-primary mr-1': true,
+  'fa fa-star': rating >= 2,
+  'fa fa-star-half-alt': rating == 1.5,
+  'far fa-start': rating < 1.5
+}"
+></small>
+
+<small
+[ngClass]="{
+  'text-primary mr-1': true,
+  'fa fa-star': rating >= 2,
+  'fa fa-star-half-alt': rating == 2.5,
+  'far fa-start': rating < 2.5
+}"
+></small>
+<small
+[ngClass]="{
+  'text-primary mr-1': true,
+  'fa fa-star': rating >= 3,
+  'fa fa-star-half-alt': rating == 3.5,
+  'far fa-start': rating < 3.5
+}"
+></small>
+<small
+[ngClass]="{
+  'text-primary mr-1': true,
+  'fa-star': rating >= 4,
+  'fa-star-half-alt': rating == 4.5,
+  'fa-start': rating < 4.5
+}"
+></small>
