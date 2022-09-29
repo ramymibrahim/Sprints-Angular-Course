@@ -1,0 +1,31 @@
+<td class="align-middle">
+  <img [src]="cartLine.product.imageUrl" alt="" style="width: 50px" />{{
+    cartLine.product.name
+  }}
+</td>
+<td class="align-middle">{{ cartLine.product.price | currency: "EGP" }}</td>
+<td class="align-middle">
+  <div class="input-group quantity mx-auto" style="width: 100px">
+    <div class="input-group-btn">
+      <button class="btn btn-sm btn-primary btn-minus" (click)="removeItem()">
+        <i class="fa fa-minus"></i>
+      </button>
+    </div>
+    <input
+      type="text"
+      class="form-control form-control-sm bg-secondary border-0 text-center"
+      [value]="cartLine.count"
+    />
+    <div class="input-group-btn">
+      <button class="btn btn-sm btn-primary btn-plus" (click)="addItem()">
+        <i class="fa fa-plus"></i>
+      </button>
+    </div>
+  </div>
+</td>
+<td class="align-middle">{{ cartLine.product.price * cartLine.count }}</td>
+<td class="align-middle">
+  <button class="btn btn-sm btn-danger" (click)="delete()">
+    <i class="fa fa-times"></i>
+  </button>
+</td>

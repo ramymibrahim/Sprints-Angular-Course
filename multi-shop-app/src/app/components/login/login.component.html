@@ -1,0 +1,36 @@
+<div class="container">
+  <div class="row">
+    <div class="col-12">
+      <form (ngSubmit)="login()" #loginForm>
+        <div>
+          <label>Username</label>
+          <input
+            #username
+            required="required"
+            [(ngModel)]="user.username"
+            name="username"
+            [ngModelOptions]="{ standalone: true }"
+          />
+          <span style="color: red" *ngIf="user.username === ''"
+            >Please enter a valid username</span
+          >
+        </div>
+
+        <div>
+          <label>Password</label>
+          <input
+            type="password"
+            #password
+            required="required"
+            [(ngModel)]="user.password"
+            [ngModelOptions]="{ standalone: true }"
+          />
+          <span style="color: red" *ngIf="user.password == ''"
+            >Please enter a valid password</span
+          >
+        </div>
+        <button [disabled]="isLoading">Login</button>
+      </form>
+    </div>
+  </div>
+</div>

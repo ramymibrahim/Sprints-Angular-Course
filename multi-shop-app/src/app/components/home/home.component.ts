@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ApitestService } from 'src/app/services/apitest.service';
 
 @Component({
   selector: 'app-home',
@@ -7,9 +8,23 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
   showCategories: boolean = true;
-  constructor() {}
+  constructor(private apitest: ApitestService) {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    setTimeout(() => {
+      console.log('timer');
+    }, 0);
+    console.log(0);
+    this.apitest.getUSAData().subscribe(
+      (data) => {
+        console.log(data);
+      },
+      (error) => {
+        console.log(error);
+      }
+    );
+    console.log(1);
+  }
   hideCategories() {
     this.showCategories = false;
   }

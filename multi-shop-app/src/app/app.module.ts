@@ -17,6 +17,9 @@ import { DetailComponent } from './components/detail/detail.component';
 import { ProductsComponent } from './components/products/products.component';
 import { ProductComponent } from './components/product/product.component';
 import { RatingComponent } from './components/rating/rating.component';
+import { CartLineComponent } from './components/cart-line/cart-line.component';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { LoginComponent } from './components/login/login.component';
 
 @NgModule({
   declarations: [
@@ -34,8 +37,10 @@ import { RatingComponent } from './components/rating/rating.component';
     ProductsComponent,
     ProductComponent,
     RatingComponent,
+    CartLineComponent,
+    LoginComponent,
   ],
-  imports: [BrowserModule, AppRoutingModule, FormsModule],
+  imports: [BrowserModule, AppRoutingModule, FormsModule, HttpClientModule],
   providers: [],
   bootstrap: [AppComponent],
 })

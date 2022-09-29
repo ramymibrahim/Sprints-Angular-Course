@@ -7,10 +7,16 @@ import { Product } from '../interfaces/product';
 })
 export class CartService {
   cartLines: Array<CartLine> = [];
-  constructor() {}
+  constructor() {
+    //localStorage.setItem('cartLines', JSON.stringify(this.cartLines));
+  }
+
+  getProducts(): Array<CartLine> {
+    this.cartLines = JSON.parse(localStorage.getItem('cartLines') || '[]');
+    return this.cartLines;
+  }
 
   getProductCount(): number {
-    //return this.cartLines.map((x) => x.count).reduce((a, v) => (a += v));
     return this.cartLines.length;
   }
 
@@ -25,10 +31,42 @@ export class CartService {
     if (!itemFound) {
       this.cartLines.push(new CartLine(product));
     }
+    localStorage.setItem('cartLines', JSON.stringify(this.cartLines));
   }
 
   //Implement function removeProduct
-  removeProduct(productId: number) {}
+  removeProduct(productId: number) {
+    let index = this.cartLines.findIndex((l) => l.product.id === productId);
+    if (index >= 0) this.removeLine(index);
+  }
   //Implement function removeLine
-  removeLine(index: number) {}
+  removeLine(index: number) {
+    this.cartLines.splice(index, 1);
+    localStorage.setItem('cartLines', JSON.stringify(this.cartLines));
+  }
+
+  getTotal() {
+    return this.getSubTotal() + this.getShipping();
+  }
+
+  getSubTotal() {
+    return this.cartLines
+      .map((l) => l.product.price * l.count)
+      .reduce((a, v) => (a += v));
+  }
+
+  getShipping() {
+    return this.getSubTotal() * 0.1;
+  }
+
+  addItem(index: number) {
+    this.cartLines[index].count++;
+    localStorage.setItem('cartLines', JSON.stringify(this.cartLines));
+  }
+
+  removeItem(index: number) {
+    this.cartLines[index].count--;
+    if (this.cartLines[index].count == 0) this.removeLine(index);
+    localStorage.setItem('cartLines', JSON.stringify(this.cartLines));
+  }
 }

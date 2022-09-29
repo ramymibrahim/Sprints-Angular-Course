@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
+import { AuthService } from 'src/app/services/auth.service';
 import { CartService } from 'src/app/services/cart.service';
 
 @Component({
@@ -9,7 +11,7 @@ import { CartService } from 'src/app/services/cart.service';
 export class HeaderComponent {
   itemName: string = 'Item 1';
   isDisabled: boolean = true;
-  constructor(private cartService: CartService) {}
+  constructor(private cartService: CartService, public authService:AuthService) {}
 
   enableInput() {
     this.isDisabled = false;
@@ -28,5 +30,9 @@ export class HeaderComponent {
 
   getCartCount(): number {
     return this.cartService.getProductCount();
+  }
+
+  logout() {
+    this.authService.logout();
   }
 }
