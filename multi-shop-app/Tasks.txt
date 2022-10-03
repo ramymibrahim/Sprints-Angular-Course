@@ -1,0 +1,9 @@
+Convert HTML template into Angular Application
+Component Interaction (parent-child, child-parent)
+Use Angular Routers
+Use Guards
+Login, Logout functions
+Form Validation
+CRUD from/to API with DB
+Client Side filtering and Sorting
+Publish / Build Application
