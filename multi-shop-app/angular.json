@@ -28,8 +28,6 @@
             "scripts": [
               "src/assets/lib/easing/easing.min.js",
               "src/assets/lib/owlcarousel/owl.carousel.min.js",
-              "src/assets/mail/jqBootstrapValidation.min.js",
-              "src/assets/mail/contact.js",
               "src/assets/js/main.js"
             ]
           },

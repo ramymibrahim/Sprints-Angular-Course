@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app-component/app.component';
@@ -20,6 +20,8 @@ import { RatingComponent } from './components/rating/rating.component';
 import { CartLineComponent } from './components/cart-line/cart-line.component';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { LoginComponent } from './components/login/login.component';
+import { ShopFilterComponent } from './components/shop-filter/shop-filter.component';
+import { ShopProductsComponent } from './components/shop-products/shop-products.component';
 
 @NgModule({
   declarations: [
@@ -39,8 +41,16 @@ import { LoginComponent } from './components/login/login.component';
     RatingComponent,
     CartLineComponent,
     LoginComponent,
+    ShopFilterComponent,
+    ShopProductsComponent,
   ],
-  imports: [BrowserModule, AppRoutingModule, FormsModule, HttpClientModule],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    FormsModule,
+    HttpClientModule,
+    ReactiveFormsModule,
+  ],
   providers: [],
   bootstrap: [AppComponent],
 })
